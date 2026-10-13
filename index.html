@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en" dir="auto">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="images/deriv-logo.svg" />
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+        <!-- PWA Manifest -->
+        <link rel="manifest" href="js/manifest.json" />
+
+        <!-- PWA Meta Tags -->
+        <meta name="theme-color" content="#ff444f" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="QUANTUM BOT" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#ff444f" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <!-- Apple Touch Icons -->
+        <link rel="apple-touch-icon" href="/assets/icons/pwa/icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/pwa/icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/pwa/icon-192x192.png" />
+        <meta name="title" content="QUANTUM BOT - Professional Trading Bot Builder &amp; Copy Trading Platform" />
+        <meta
+            name="description"
+            content="Create profitable trading bots without coding. Professional Quantum Bot trading bot builder with copy trading, free bots, and advanced strategies."
+        />
+        <meta property="og:title" content="QUANTUM BOT" />
+        <meta
+            property="og:description"
+            content="Create profitable trading bots without coding. Professional Quantum Bot trading bot builder with copy trading, free bots, and advanced strategies."
+        />
+        <title>QUANTUM BOT - Professional Trading Bot Builder &amp; Copy Trading Platform</title>
+        <style>
+            :root {
+                font-size: 62.5%;
+            }
+        </style>
+        <script>
+            (function () {
+                var standalone =
+                    window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+                if (!standalone) return;
+                var root = document.documentElement;
+                root.classList.add("display-standalone");
+                if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    root.classList.add("ios-standalone");
+                }
+                root.style.setProperty("--mobile-header-offset", "0px");
+            })();
+        </script>
+        <link rel="icon" href="images/favicon.ico" />
+        <script defer="" src="js/lib-react.1da542e2.js"></script>
+        <script defer="" src="js/lib-router.6af6835d.js"></script>
+        <script defer="" src="js/800.e1523d07.js"></script>
+        <script defer="" src="js/index.c35b41b4.js"></script>
+        <link href="css/800.6e41912a.css" rel="stylesheet" />
+        <link href="css/index.108a43cf.css" rel="stylesheet" />
+    </head>
+
+    <body class="body theme theme--light">
+        <div id="modal_root" class="modal-root"></div>
+        <div id="popup_root" class="popup-root"></div>
+        <div id="root"></div>
+        <!-- LiveChat script -->
+        <script type="text/javascript" defer="">
+            window.__lc = window.__lc || {};
+            window.__lc.license = 12049137;
+            window.__lc.asyncInit = true;
+            (function (n, t, c) {
+                function i(n) {
+                    return e._h ? e._h.apply(null, n) : e._q.push(n);
+                }
+                var e = {
+                    _q: [],
+                    _h: null,
+                    _v: "2.0",
+                    on: function () {
+                        i(["on", c.call(arguments)]);
+                    },
+                    once: function () {
+                        i(["once", c.call(arguments)]);
+                    },
+                    off: function () {
+                        i(["off", c.call(arguments)]);
+                    },
+                    get: function () {
+                        if (!e._h) throw new Error("[LiveChatWidget] You can’t use getters before load.");
+                        return i(["get", c.call(arguments)]);
+                    },
+                    call: function () {
+                        i(["call", c.call(arguments)]);
+                    },
+                    init: function () {
+                        setTimeout(() => {
+                            var n = t.createElement("script");
+                            (n.async = !0),
+                                (n.type = "text/javascript"),
+                                (n.src = "https://cdn.livechatinc.com/tracking.js"),
+                                t.head.appendChild(n);
+                        }, 3000);
+                    },
+                };
+                !n.__lc.asyncInit && e.init(), (n.LiveChatWidget = n.LiveChatWidget || e);
+            })(window, document, [].slice);
+        </script>
+        <!-- End LiveChat script -->
+
+        <!-- Security hardening: disable console + right-click in production -->
+        <script>
+            (function () {
+                // Allow dev mode bypass: set window.__devMode = true before load
+                if (window.__devMode) return;
+
+                // --- Disable context menu (right-click) ---
+                document.addEventListener(
+                    "contextmenu",
+                    function (e) {
+                        e.preventDefault();
+                        return false;
+                    },
+                    true
+                );
+
+                // --- Block DevTools keyboard shortcuts ---
+                document.addEventListener(
+                    "keydown",
+                    function (e) {
+                        // F12
+                        if (e.key === "F12") {
+                            e.preventDefault();
+                            return false;
+                        }
+                        // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+U, Ctrl+Shift+C
+                        if (e.ctrlKey && e.shiftKey && ["I", "J", "U", "C"].includes(e.key.toUpperCase())) {
+                            e.preventDefault();
+                            return false;
+                        }
+                        // Cmd+Option+I / Cmd+Option+J (macOS)
+                        if (e.metaKey && e.altKey && ["I", "J"].includes(e.key.toUpperCase())) {
+                            e.preventDefault();
+                            return false;
+                        }
+                    },
+                    true
+                );
+
+                // --- Silence all console methods ---
+                var noop = function () {};
+                var methods = [
+                    "log",
+                    "debug",
+                    "info",
+                    "warn",
+                    "error",
+                    "dir",
+                    "table",
+                    "trace",
+                    "group",
+                    "groupEnd",
+                    "groupCollapsed",
+                    "time",
+                    "timeEnd",
+                    "count",
+                    "clear",
+                ];
+                methods.forEach(function (m) {
+                    try {
+                        console[m] = noop;
+                    } catch (_) {}
+                });
+                try {
+                    Object.defineProperty(window, "console", {
+                        get: function () {
+                            return {
+                                log: noop,
+                                debug: noop,
+                                info: noop,
+                                warn: noop,
+                                error: noop,
+                                dir: noop,
+                                table: noop,
+                                trace: noop,
+                            };
+                        },
+                        configurable: false,
+                    });
+                } catch (_) {}
+            })();
+        </script>
+
+        <!-- Browser Service Worker Prevention -->
+        <script>
+            // Disabled domain check to allow Quantum Bot branding and features
+            // Check browser compatibility and prevent service worker issues
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isFirefox = userAgent.includes("firefox");
+            const isSafari = userAgent.includes("safari") && !userAgent.includes("chrome");
+            const shouldSkipSW = isFirefox || isSafari;
+
+            if (shouldSkipSW) {
+                // Cleanup any existing service workers
+                if ("serviceWorker" in navigator) {
+                    navigator.serviceWorker
+                        .getRegistrations()
+                        .then((registrations) => {
+                            registrations.forEach((registration) => {
+                                registration.unregister();
+                            });
+                        })
+                        .catch(() => {});
+                }
+            }
+
+            // Listen for service worker messages if registered by PWA utils (non-problematic browsers only)
+            if ("serviceWorker" in navigator && !shouldSkipSW) {
+                navigator.serviceWorker.addEventListener("message", () => {});
+            }
+        </script>
+    </body>
+</html>
